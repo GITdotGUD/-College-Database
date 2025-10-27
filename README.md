@@ -1,2 +1,6 @@
-# -College-Database-XML-CSS-
-Assignment
+# College-Database
+Assignment - A short explanation
+
+This assignment is made with XML and XSLT(a styling language for XML) . This database is made to set-up and visually enhances college data for easier writing and understanding. The XML document is made with a hierarchy, ensuring that each level of detail is clearly represented. The indented/structured format makes the data easier to read for humans.
+
+The CSS(XSLT) adds visual clarity by using borders, colors and font styling to saparate and emphasize key information. Each department and sections are saparated and highlighted with borders and spacing. Student details are stylized and each students performence is color-coded, GREEN for avarege and above while RED is for below average. It is color-coded to make academic standing immediatly visible for easier visual representation.
