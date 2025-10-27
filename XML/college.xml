@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="collegeCSS.xml"?>
+<xml>
+    <college>
+        <name>Polytechnic</name>
+        <location>London, UK</location>
+        <year_established>1984</year_established>
+
+
+        <office>
+            <staff>
+                <principal>
+                    <id>001</id>
+                    <name>Emily Johnson</name>
+                    <gender>F</gender>
+                </principal>
+
+                <professors>
+                    <professor>
+                        <id>002</id>
+                        <name>Michael Green</name>
+                        <gender>M</gender>
+                        <subject>business</subject>
+                    </professor>
+                    <professor>
+                        <id>003</id>
+                        <name>Sarah White</name>
+                        <gender>F</gender>
+                        <subject>science</subject>
+                    </professor>
+                </professors>
+            </staff>
+        </office>
+
+        <departments>
+            <department>
+                <name>Business</name>
+                <head>Michael Green</head>
+            </department>
+            <department>
+                <name>Science</name>
+                <head>Sarah White</head>
+            </department>
+        </departments>
+
+        <courses>
+            <business>
+                <course>
+                    <id>B101</id>
+                    <title>Marketing</title>
+                    <professor>Michael Green</professor>
+                    <duration>3 years</duration>
+                </course>
+                <course>
+                    <id>B102</id>
+                    <title>Finance</title>
+                    <professor>Michael Green</professor>
+                    <duration>3 years</duration>
+                </course>
+            </business>
+
+            <science>
+                <course>
+                    <id>C101</id>
+                    <title>Computer Science</title>
+                    <professor>Sarah White</professor>
+                    <duration>3 years</duration>
+                </course>
+                <course>
+                    <id>C102</id>
+                    <title>Mechanical Engineering</title>
+                    <professor>Sarah White</professor>
+                    <duration>4 years</duration>
+                </course>
+            </science>
+        </courses>
+
+
+        <library>
+            <books>
+                <book id="B001">
+                    <title>Introduction to Marketing</title>
+                    <author>Jane Smith</author>
+                    <year>2024</year>
+                </book>
+                <book id="B002">
+                    <title>Introduction to Mechanical Engineering</title>
+                    <author>John Brown</author>
+                    <year>2024</year>
+                </book>
+                <book id="B003">
+                    <title>Computer Science Fundamentals</title>
+                    <author>Mary Johnson</author>
+                    <year>2023</year>
+                </book>
+                <book id="B004">
+                    <title>Finance Basics</title>
+                    <author>James Wilson</author>
+                    <year>2023</year>
+                </book>
+            </books>
+        </library>
+
+
+        <classroom>
+                <students>
+                    <student>
+                        <id>001</id>
+                        <name>John Doe</name>
+                        <age>15</age>
+                        <gender>M</gender>
+                        <enrolled_in>
+                            <enrolled_course>
+                                <course_id>C101</course_id>
+                                <course_title>Computer Science</course_title>
+                            </enrolled_course>
+                            <enrolled_course>
+                                <course_id>B101</course_id>
+                                <course_title>Marketing</course_title>
+                            </enrolled_course>
+                            <enrolled_course>
+                                <course_id>B102</course_id>
+                                <course_title>Finance</course_title>
+                            </enrolled_course>
+                        </enrolled_in>
+                        <grade>10</grade>
+                        <GPA>3.8</GPA>
+                    </student>
+
+                    <student>
+                        <id>002</id>
+                        <name>Jane Smith</name>
+                        <age>16</age>
+                        <gender>F</gender>
+                        <enrolled_in>
+                            <enrolled_course>
+                                <course_id>B101</course_id>
+                                <course_title>Marketing</course_title>
+                            </enrolled_course>
+                            <enrolled_course>  
+                                <course_id>B102</course_id>
+                                <course_title>Finance</course_title>
+                            </enrolled_course>
+                        </enrolled_in>
+                        <grade>11</grade>
+                        <GPA>3.4</GPA>
+                    </student>
+
+                    <student>
+                        <id>003</id>
+                        <name>Mike Johnson</name>
+                        <age>15</age>
+                        <gender>M</gender>
+                        <enrolled_in>
+                            <enrolled_course>
+                                <course_id>C102</course_id>
+                                <course_title>Mechanical Engineering</course_title>
+                            </enrolled_course>
+                        </enrolled_in>
+                        <grade>10</grade>
+                        <GPA>3.7</GPA>
+                    </student>
+                </students>
+        </classroom>
+
+    </college>
+</xml>

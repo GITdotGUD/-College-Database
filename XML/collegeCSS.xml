@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+    <html>
+        <head>
+            <style>
+                html{background-color: #589a9cff;}
+                body{font-family:Arial;font-size:12px;max-width:600px;margin:10px auto;line-height:1.2}
+                h1{font-size:16px;border-bottom:2px solid #000e3aff;padding-bottom:4px}
+                h2{font-size:14px;border-bottom:1px solid #b1a6a6ff;}
+                h2{color: #15488aff;}
+                
+                h3{font-size:13px;color:#666}
+                .item{border:1px solid #b5c3c7ff;padding:6px;margin:3px 0}
+                .label{font-weight:bold;color:#555;display:inline-block;width:70px}
+                p{margin:1px 0}
+                ul{margin:2px 0 2px 75px;padding:0}
+                div.item{padding: 2px 4px;background: #a3c7dbff;border-radius:4px}
+                span.label{font-weight: bold;color: #b61212ff;}
+            </style>
+        </head>
+        <body >
+            <h1><xsl:value-of select="xml/college/name"/></h1>
+            <h2>Information</h2>
+            <div class="item">
+                <p><span class="label">Location:</span> <xsl:value-of select="xml/college/location"/></p>
+                <p><span class="label">Est.:</span> <xsl:value-of select="xml/college/year_established"/></p>
+            </div>
+
+            <h2>Staff</h2>
+            <div class="item">
+                <h2>Principal</h2>
+                <p>
+                    <span class="label">Name:</span> 
+                    <strong style="font-size: 1.1em;"><xsl:value-of select="xml/college/office/staff/principal/name"/></strong>
+                </p>
+                <p>
+                    <span class="label">ID:</span> 
+                    <xsl:value-of select="xml/college/office/staff/principal/id"/>
+                </p>
+            </div>
+
+            <h2>Professors</h2>
+            <xsl:for-each select="xml/college/office/staff/professors/professor">
+                <div class="item">
+                    <p>
+                        <span class="label">Name:</span> 
+                        <strong style="font-size: 1.1em;"><xsl:value-of select="name"/></strong>
+                    </p>
+                    <p>
+                        <span class="label">ID:</span> 
+                        <xsl:value-of select="id"/>
+                    </p>
+                    <p>
+                        <span class="label">Subject:</span> 
+                        <xsl:value-of select="subject"/>
+                    </p>
+                </div>
+            </xsl:for-each>
+
+            <h2>Departments</h2>
+            <xsl:for-each select="xml/college/departments/department">
+                <div class="item">
+                    <p>
+                        <span class="label">Name:</span> 
+                        <strong style="font-size: 1.1em;"><xsl:value-of select="name"/></strong>
+                    </p>
+                    <p>
+                        <span class="label">Head:</span> 
+                        <xsl:value-of select="head"/>
+                    </p>
+                </div>
+            </xsl:for-each>
+
+            <h2>Courses</h2>
+            <xsl:for-each select="xml/college/courses/business/course | xml/college/courses/science/course">
+                <div class="item">
+                    <p>
+                        <span class="label">Course:</span> 
+                        <xsl:value-of select="title"/>
+                        (<xsl:value-of select="id"/>) -
+                        <xsl:value-of select="duration"/>
+                    </p>
+                    <p>
+                        <span class="label">Prof:</span> 
+                        <xsl:value-of select="professor"/>
+                        <!-- (Taught for: <xsl:value-of select="duration"/>) -->
+                    </p>
+                </div>
+            </xsl:for-each>
+
+            <h2>Library</h2>
+            <xsl:for-each select="xml/college/library/books/book">
+                <div class="item">
+                    <p>
+                        <span class="label">Book:</span> 
+                        <xsl:value-of select="title"/>
+                        (<xsl:value-of select="@id"/>)
+                    </p>
+                    <p><span class="label">Details:</span> <xsl:value-of select="author"/>, <xsl:value-of select="year"/></p>
+                </div>
+            </xsl:for-each>
+
+            <h2>Students</h2>
+            <xsl:for-each select="xml/college/classroom/students/student">
+                <div class="item">
+                    <p>
+                        <span class="label">Student:</span>
+                        <strong style="font-size: 1.1em;"><xsl:value-of select="name"/></strong>
+                        (ID: <xsl:value-of select="id"/>)
+                    </p>
+                    <p><span class="label">Info:</span> Age <xsl:value-of select="age"/>, Grade <xsl:value-of select="grade"/></p>
+                    <p><span class="label">Courses:</span></p>
+                    <ul>
+                        <xsl:for-each select="enrolled_in/enrolled_course">
+                            <li><xsl:value-of select="course_title"/> (<xsl:value-of select="course_id"/>)</li>
+                        </xsl:for-each>
+                    </ul>
+                    <p>
+                        <span class="label">GPA:</span> 
+                        <strong style="color: #02b902ff;"><xsl:value-of select="GPA"/></strong>
+                    </p>
+
+                </div>
+            </xsl:for-each>
+        </body>
+    </html>
+</xsl:template>
+</xsl:stylesheet>
