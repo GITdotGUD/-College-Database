@@ -20,7 +20,7 @@
             </style>
         </head>
         <body >
-            <h1><xsl:value-of select="xml/college/name"/></h1>
+            <h1><xsl:value-of select="college.xml"/></h1>
             <h2>Information</h2>
             <div class="item">
                 <p><span class="label">Location:</span> <xsl:value-of select="xml/college/location"/></p>
